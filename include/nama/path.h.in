@@ -1,0 +1,14 @@
+#pragma once
+
+#include <filesystem>
+
+namespace nama {
+
+inline const std::filesystem::path PROJECT_DIR    = std::filesystem::path("@PROJECT_DIR@");
+inline const std::filesystem::path OUT_DIR        = PROJECT_DIR / "out";
+inline const std::filesystem::path ARCHIVE_DIR    = OUT_DIR / "archives";
+inline const std::filesystem::path ASSET_DIR      = PROJECT_DIR / "assets";
+inline const std::filesystem::path SCRIPT_DIR     = PROJECT_DIR / "script";
+inline const std::filesystem::path VIS_SCRIPT_DIR = PROJECT_DIR / "script" / "visualization";
+
+}  // namespace nama

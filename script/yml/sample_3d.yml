@@ -1,0 +1,17 @@
+experiment:
+  - command: build/apps/eulerian_liquid_3d -q 64 --frame_num 300
+    output: sample0
+
+movie:
+  - inputs:
+      - name: marching_cubes_gl
+      - name: contour_2d_gl
+    output: gl
+
+render:
+  - input: marching_cubes
+    blend: fluid
+    script: swap_and_render
+    output: rendered
+    samples: 64
+    progressive: 1080

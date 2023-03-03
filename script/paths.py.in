@@ -1,0 +1,12 @@
+from pathlib import Path
+
+PROJECT_DIR = Path('@PROJECT_DIR@')
+OUT_DIR = PROJECT_DIR / 'out'
+ARCHIVE_DIR = OUT_DIR / 'archives'
+ASSET_DIR = PROJECT_DIR / 'assets'
+SCRIPT_DIR = PROJECT_DIR / 'script'
+YML_DIR = SCRIPT_DIR / 'yml'
+YML_ARCHIVE_DIR = YML_DIR / 'archive'
+XML_DIR = SCRIPT_DIR / 'xml'
+BLENDER_DIR = SCRIPT_DIR / 'blender'
+MOVIE_DIR = PROJECT_DIR / 'movie'

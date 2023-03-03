@@ -1,0 +1,31 @@
+[Bb]uild/*
+[Dd]ocs/*
+CMakeCache.*
+CMakeFiles/*
+[Tt]esting/*
+
+### VisualStudioCode ###
+.vscode/*
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+__pycache__/
+
+movie/*
+out/*
+
+*.mp4
+
+path.h
+paths.py
+
+*.out
+sandbox.cpp
+
+*.blend1
