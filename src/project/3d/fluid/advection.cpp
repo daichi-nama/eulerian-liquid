@@ -10,8 +10,8 @@ void advect_collocated_grid(Grid3f& grid, const Grid3f& grid_temp, const Stagger
                             float dt) {
     StaggeredGridField<StaggeredGrid3f, Vector3f> field(velocity);
     parallel_loop(grid, [&](int i, int j, int k) {
-        Vector3f pos  = math::trace_rk2(grid.pos(i, j, k), -dt, field);
-        grid(i, j, k) = math::lerp(pos, grid_temp);
+        Vector3f backtraced_pos = math::trace_rk2(grid.pos(i, j, k), -dt, field);
+        grid(i, j, k)           = math::lerp(backtraced_pos, grid_temp);
     });
 }
 
@@ -20,8 +20,8 @@ void advect_staggered_grid(StaggeredGrid3f& grid, const StaggeredGrid3f& grid_te
     StaggeredGridField<StaggeredGrid3f, Vector3f> field(velocity);
     for (int d = 0; d < grid.dim; ++d) {
         parallel_loop(grid[d], [&](int i, int j, int k) {
-            Vector3f pos     = math::trace_rk2(grid[d].pos(i, j, k), -dt, field);
-            grid[d](i, j, k) = math::lerp(pos, grid_temp[d]);
+            Vector3f backtraced_pos = math::trace_rk2(grid[d].pos(i, j, k), -dt, field);
+            grid[d](i, j, k)        = math::lerp(backtraced_pos, grid_temp[d]);
         });
     }
 }
